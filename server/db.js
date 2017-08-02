@@ -1,17 +1,76 @@
-const mongoose=require('mongoose');
+// 跟数据库交互的文件
+
+const mongoose=require('mongoose');//重要(定义 转化为model 实例化 加方法)
 const Schema=mongoose.Schema;
+const md5=require('md5');
 
-
-const userSchema=new Schema({
+// 定义一个Schema
+const UserSchema=new Schema({
     username:{type:String},
     password:{type:String},
     created: {type:Date}
 });
+// //添加方法
+// UserSchema.methods.speak=function(){
+// 	var greet=this.username?"hello "+this.username:"I have no name!"
+// 	console.log(greet);
+// };
+const ArticleSchema=new Schema({
+	title:      {type:String,require:true},
+	content:    {type:String,require:true},
+	author:     {type:Schema.Types.ObjectId,ref:'User'},
+	category:   {type:Schema.Types.ObjectId,ref:'Category'},
+	created:    {type:Date},
+	slug:       {type:String,require:true},
+	published:  {type:Boolean,default:false},
+	meta:       {type:Schema.Types.Mixed},
+	comments:   [Schema.Types.Mixed ]
+},{versionKey: false});
+
+const CategorySchema=new Schema({
+	name:       {type:String,require:true},
+	slug:       {type:String,require:true},
+	created:    {type:Date},
+});
 
 
 const Models={
-    User:mongoose.model('user',userSchema),
+    User:mongoose.model('user',UserSchema),//将Schema compiling model
+    Article:mongoose.model('article',ArticleSchema),//将Schema compiling model
+    Category:mongoose.model('category',CategorySchema),//将Schema compiling model
+    verify:UserSchema.methods.verifyPassword,
 };
+
+UserSchema.methods.verifyPassword=function(){
+	let isMatch=md5(password) === this.password;
+	//console.log('UserSchema.methods.verifyPassword: ', password, this.password, isMatch);
+	return isMatch;
+};
+
+
+
+
+
+// let userZhang=new Models.User({username:'xiangyu'});
+// console.log("........."+userZhang.username+"............");
+// userZhang.speak();
+
+// //保存到db中，回调两个参数：err 
+// userZhang.save(function(err,userZhang){
+// 	if(err) return console.error(err);
+// 	userZhang.speak();
+// });
+// //查询全部的实例
+// Models.User.find(function(err,usersResult){
+// 	if(err) return console.error(err);
+// 	console.log(usersResult);
+// });
+// //查询特定实例
+// Models.User.find({username:/iang/},function(err,usersResult){
+// 	if(err) return console.error(err);
+// 	console.log("find unique:......");
+// 	console.log(usersResult);
+// });
 
 
 /**
