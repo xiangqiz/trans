@@ -12,11 +12,16 @@ router.use(validator());
 
 
 //登录
-router.post('/login',function(req, res, next){
+router.post('/login',passport.authenticate('local', {
+    failureRedirect: '/login',
+    failureFlash: '用户名或密码错误'
+}),function(req, res, next){
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:9999");
     res.status(200).send(JSON.stringify(req.query));
     console.log('user login success: '+JSON.stringify(req.query));
 });
+
+
 //注册
 router.post('/reg',function(req, res, next){
 	// res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//防止中文乱码

@@ -1,5 +1,6 @@
 const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
+const md5 = require("md5");
 
 
 const userSchema=new Schema({
@@ -7,6 +8,13 @@ const userSchema=new Schema({
     password:{type:String},
     created: {type:Date}
 });
+
+//MD5密码和原密码匹配
+userSchema.methods.verifyPassword= function(password){
+    let isMatch= md5(password)=== this.password;
+    console.log('UserSchema.methods.verifyPassword: ', password, this.password, isMatch);
+    return isMatch;
+};
 
 
 const Models={
