@@ -8,7 +8,9 @@
                     <input type="checkbox" value="remember-me"> 记住我
                 </label>
             </div>
-			<input type="button" value="登录" @click="userLogin">
+			<input type="button" value="登录" @click.stop="userLogin">
+			<input type="button" value="注册" @click.stop="toRegisterView">
+			<button class="changePsd" @click.stop="toResetPsdView">改密码</button>
 		</div>
 	</div>
 </template>
@@ -19,9 +21,14 @@
 			return{
 				username:'100477074@163.com',
 				password:'yu789987shi',
+				newPassWord:'123456',
 			}
 		},
 		methods:{
+			toResetPsdView(){
+				let target='http://localhost:9999/#/resetPsd';
+				window.open(target,"_blank");
+			},
 			userLogin(){
 				if(this.username && this.password){
 					let _this=this;
@@ -43,6 +50,10 @@
 						console.log(error);
 					})
 				}
+			},
+			toRegisterView(){
+				let target='http://localhost:9999/#/register';
+				window.open(target,"_blank");
 			},
 
 		},
