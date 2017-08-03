@@ -4,6 +4,7 @@ import homePage from './views/home.vue'
 import aboutPage from './views/about.vue'
 import loginPage from './views/login.vue'
 import registerPage from './views/register.vue'
+import resetPasswordPage from './views/resetPassword.vue'
 
 Vue.use(Router)
 export default new Router({
@@ -23,10 +24,15 @@ export default new Router({
             name: 'register',
             component: registerPage
         },
-         {
+        {
             path: '/login',
             name: 'login',
             component: loginPage
+        },
+        {
+            path: '/resetPsd',
+            name: 'resetPsd',
+            component: resetPasswordPage
         },
         {
             path: '/',
