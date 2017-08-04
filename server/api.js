@@ -5,11 +5,13 @@ const validator = require('express-validator');
 const bodyParser = require('body-parser');
 const md5 = require('md5');
 const passport = require('passport');
+const cors=require('cors');//跨域中间件
 
 //use是express注册中间件的方法，返回一个函数
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 router.use(validator());
+router.use(cors());
 
 //中间件（middleware是处理http请求的函数。一个中间件处理完，再传递给下一个)
 //next（）有参数则代表有错误    有next（）则不能向请求send
@@ -29,23 +31,14 @@ router.post('/login',passport.authenticate('local', {
     failureRedirect: '/login',
     failureFlash: '用户名或密码错误'
 }),function(req, res, next){
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:9999");
     res.status(200).send(JSON.stringify(req.query));
     console.log('user login success: '+JSON.stringify(req.query));
     next();
 });
 
-// router.post('/login',function(req, res, next){
-//     // res.setHeader("Access-Control-Allow-Origin", "http://localhost:9999");
-//     // res.status(200).send('next..........');
-//     console.log('next...............');
-//     next();
-// });
-
 //注册
 router.post('/reg',function(req, res, next){
 	// res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//防止中文乱码
-	res.setHeader("Access-Control-Allow-Origin", "http://localhost:9999");//允许跨域请求
 	const username= req.query.username;
     const password= req.query.password;
     const confirmPassword= req.query.confirmPassword;
@@ -76,7 +69,6 @@ router.post('/reg',function(req, res, next){
 //改密码
 router.post('/password',function(req, res, next){
     // res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//防止中文乱码
-    // res.setHeader("Access-Control-Allow-Origin", "http://localhost:9999");//允许跨域请求
     // const username= req.query.username;
     // const password= req.query.password;
     // const newPassword= req.query.newPassword;
@@ -93,7 +85,6 @@ router.post('/password',function(req, res, next){
 
 // 获取登录session
 router.get('/mysession',requireLogin,function(req,res,next){
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:9999");
     console.log('req.user');
     let user=req.user;
     res.status(200).send(user).end();
@@ -101,7 +92,6 @@ router.get('/mysession',requireLogin,function(req,res,next){
 
 // 用户权限校验
 function requireLogin(req,res,next){
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:9999");
     console.log('req.user');
     if(req.user){
         next();

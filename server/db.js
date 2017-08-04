@@ -1,19 +1,14 @@
 
 const mongoose=require('mongoose');
-const Schema=mongoose.Schema;
+const Schema=mongoose.Schema;//schema定义数据的数据结构
 const md5 = require("md5");
 
 // 定义一个Schema
 const UserSchema=new Schema({
-    username:{type:String},
-    password:{type:String},
+    username:{type:String,required:true,unique: true},
+    password:{type:String,required:true},
     created: {type:Date}
 });
-// //添加方法
-// UserSchema.methods.speak=function(){
-// 	var greet=this.username?"hello "+this.username:"I have no name!"
-// 	console.log(greet);
-// };
 const ArticleSchema=new Schema({
 	title:      {type:String,require:true},
 	content:    {type:String,require:true},
@@ -41,7 +36,7 @@ UserSchema.methods.verifyPassword= function(password){
 
 
 const Models={
-    User:mongoose.model('user',UserSchema),//将Schema compiling model
+    User:mongoose.model('user',UserSchema),//将Schema compiling model(数据的构造函数，通过new一个实例来对数据进行具体的增删查改操作)
     Article:mongoose.model('article',ArticleSchema),//将Schema compiling model
     Category:mongoose.model('category',CategorySchema),//将Schema compiling model
     verify:UserSchema.methods.verifyPassword,
@@ -52,32 +47,6 @@ UserSchema.methods.verifyPassword=function(){
 	//console.log('UserSchema.methods.verifyPassword: ', password, this.password, isMatch);
 	return isMatch;
 };
-
-
-
-
-
-// let userZhang=new Models.User({username:'xiangyu'});
-// console.log("........."+userZhang.username+"............");
-// userZhang.speak();
-
-// //保存到db中，回调两个参数：err 
-// userZhang.save(function(err,userZhang){
-// 	if(err) return console.error(err);
-// 	userZhang.speak();
-// });
-// //查询全部的实例
-// Models.User.find(function(err,usersResult){
-// 	if(err) return console.error(err);
-// 	console.log(usersResult);
-// });
-// //查询特定实例
-// Models.User.find({username:/iang/},function(err,usersResult){
-// 	if(err) return console.error(err);
-// 	console.log("find unique:......");
-// 	console.log(usersResult);
-// });
-
 
 /**
  * 创建数据库名称并连接

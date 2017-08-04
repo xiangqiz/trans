@@ -1,7 +1,7 @@
 /**
  * Created by yuhuashi on 2017/7/30.
  */
-const passport = require('passport');
+const passport = require('passport');//认证登录，能让认证更透明，减少耦合
 const LocalStrategy = require('passport-local').Strategy;
 const db = require('./db');
 
@@ -16,7 +16,6 @@ module.exports.init=function () {
 
         db.User.findOne({ username: username }, function (err, user) {
             console.log('passport.local.find: ', user, err);
-
             if (err) {
                 return done(err);
             }

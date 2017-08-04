@@ -7,6 +7,7 @@ const MongoStore = require('connect-mongo')(session);
 const flash=require('connect-flash');
 const passport = require('passport');
 
+
 app.use(session({
     secret: 'nodeblog',
     resave: false,
@@ -16,9 +17,8 @@ app.use(session({
 }));
 app.use(flash());
 app.use(passport.initialize());
-
-app.use(api);   //最好放在下边
 require('./passport').init();
+app.use(api);   //最好放在下边
 
 app.listen(8999, function(){
     console.log('Server up: http://localhost:8999' );
