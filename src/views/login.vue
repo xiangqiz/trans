@@ -3,11 +3,6 @@
 		<div>
 			用户: <input type="text" v-model="username">
 			密码: <input type="password" v-model="password">
-			<div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> 记住我
-                </label>
-            </div>
 			<input type="button" value="登录" @click.stop="userLogin">
 			<input type="button" value="注册" @click.stop="toRegisterView">
 			<button class="changePsd" @click.stop="toResetPsdView">改密码</button>

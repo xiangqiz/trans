@@ -68,19 +68,10 @@ router.post('/reg',function(req, res, next){
 });
 //改密码
 router.post('/password',function(req, res, next){
-    // res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//防止中文乱码
-    // const username= req.query.username;
-    // const password= req.query.password;
-    // const newPassword= req.query.newPassword;
-    // //服务端验证字段
-    // req.checkQuery('username', '须为邮箱且不能为空').notEmpty().isEmail();
-    // req.checkQuery('password', '密码不能为空').notEmpty();
-    // req.checkQuery('newPassword', '新密码不能为空').notEmpty();
-
-    // let errors=req.validationErrors();
-    // console.log("errors::::::::::");console.log(errors);
-    // if(errors) return res.status(301).send(errors).end();
-
+    const username= req.query.user.username;
+    const newPassword= req.query.newPassword;
+    const confirmPassword= req.query.confirmPassword;
+    console.log(username,newPassword,confirmPassword);
 });
 
 // 获取登录session
@@ -90,9 +81,10 @@ router.get('/mysession',requireLogin,function(req,res,next){
     res.status(200).send(user).end();
 });
 
-// 用户权限校验
+// Middleware用户权限校验
 function requireLogin(req,res,next){
-    console.log('req.user');
+    console.log('req.user::::::::::;;');
+    console.log(req);
     if(req.user){
         next();
     }else{

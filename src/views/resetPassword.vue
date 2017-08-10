@@ -1,8 +1,8 @@
 <template>
 	<div >
 		<div>
-			新密码: <input type="password" v-model="newPassword">
-			确认密码: <input type="password" v-model="confirmPassword">
+			新密码: <input type="text" v-model="newPassword">
+			确密码: <input type="text" v-model="confirmPassword">
 			<button class="changePsd" @click.stop="changePassword">改密码</button>
 		</div>
 	</div>
@@ -14,25 +14,27 @@
 			return{
 				newPassword:'11111',
 				confirmPassword:'11111',
-				user:null,
+				user:{
+					username:'100477074@163.com',
+				},
 			}
 		},
-		created(){
-			let url='http://127.0.0.1:8999/mysession';
-	        this.$http({
-	        	method:'get',
-	        	url:url,
-	        }).then(function(result){
-	            if(result.status==200){
-	                console.log(result.body);
-	                this.user=result.body
-	            }
-	        }).catch(function(err){
-	            console.log('会话失败：'+err);debugger
-	            let target='http://localhost:9999/#/login';
-				window.open(target,"_blank");
-	        });
-	    },
+		// created(){
+		// 	let url='http://127.0.0.1:8999/mysession';
+	 //        this.$http({
+	 //        	method:'get',
+	 //        	url:url,
+	 //        }).then(function(result){
+	 //            if(result.status==200){
+	 //                console.log(result.body);
+	 //                this.user=result.body
+	 //            }
+	 //        }).catch(function(err){
+	 //            console.log('会话失败：'+err);
+	 //            let target='http://localhost:9999/#/login';
+		// 		window.open(target,"_blank");
+	 //        });
+	 //    },
 		methods:{
 			changePassword(){
 				if( this.confirmPassword && this.newPassword){
@@ -40,6 +42,7 @@
 					let _obj={
 						newPassWord:this.newPassWord,
 						confirmPassword:this.confirmPassword,
+						user:this.user,
 					};
 					let url='http://127.0.0.1:8999/password';
 					this.$http({

@@ -3,17 +3,18 @@ var webpack = require('webpack')
 // var config = require('./config')
 
 module.exports={
-	entry:'./src/main.js',//唯一入口文件
+	entry:'./src/main.js',//唯一入口文件 (可以是字符串，数组，对象)
 	output:{
+        //output最起码要配置这两个
 		path:path.resolve(__dirname,'./dist'),//使用__dirname变量获取当前模块文件所在目录的完整绝对路径
-		publicPath:'/dist/',
-        filename: 'build.js',
+        filename: '[name].js',//根据入口生成的文件名字，如这里入口是main，所以就生成main.js
+        // filename: 'build.js',//指定的文件名字
 	},
 	module: {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader',
+                loader: 'vue-loader',//用vue-loader去对.vue结尾的文件 进行预处理
                 options: {
                     loaders: {
                     }
@@ -41,10 +42,11 @@ module.exports={
             ,
             {
                 test: /\.scss$/,
-                loader: "style-loader!css-loader!sass-loader!"
+                loader: "style-loader!css-loader!sass-loader!"//！是分隔符
             }
         ]
     },
+    //resolver用来找到模块的绝对路径
     resolve: {
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
