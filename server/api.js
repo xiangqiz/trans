@@ -68,10 +68,32 @@ router.post('/reg',function(req, res, next){
 });
 //改密码
 router.post('/password',function(req, res, next){
-    const username= req.query.user.username;
-    const newPassword= req.query.newPassword;
-    const confirmPassword= req.query.confirmPassword;
-    console.log(username,newPassword,confirmPassword);
+    const user= req.body.user.username;
+    const newPassword= req.body.newPassword;
+    const confirmPassword= req.body.confirmPassword;
+
+    req.checkBody('confirmPassword','确认密码不能为空且和新密码一致').notEmpty().equals(newPassword);
+    req.checkBody('newPassword','新密码不能为空').notEmpty();
+
+    let errors=req.validationErrors();
+    console.log('errors::::::;;;;;;');
+    console.log(errors);
+    if (errors) return res.status(301).send(errors).end();
+
+    db.User.findOne({username:user}).exec(function(err,userFind){
+        userFind.password=md5(newPassword);
+
+        userFind.save(function(err,result){
+            if(err){
+                console.log('modify pwd err:'+ err);
+                throw err;
+            }else{
+                console.log('修改密码成功info: ');
+                res.status(200).send(JSON.stringify(result)).end();
+            }
+        });
+
+    });
 });
 
 // 获取登录session

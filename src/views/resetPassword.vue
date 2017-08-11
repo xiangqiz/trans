@@ -12,8 +12,8 @@
 		name:'login',
 		data(){
 			return{
-				newPassword:'11111',
-				confirmPassword:'11111',
+				newPassword:'654321',
+				confirmPassword:'654321',
 				user:{
 					username:'100477074@163.com',
 				},
@@ -40,16 +40,21 @@
 				if( this.confirmPassword && this.newPassword){
 					let _this=this;
 					let _obj={
-						newPassWord:this.newPassWord,
 						confirmPassword:this.confirmPassword,
 						user:this.user,
+						newPassword:this.newPassword,
 					};
 					let url='http://127.0.0.1:8999/password';
 					this.$http({
 						url:url,
 						method:'post',
-						params:_obj,
-						headers: {'Content-Type': 'multipart/form-data'},
+						data:{
+							newPassword:'654321',
+							confirmPassword:'654321',
+							user:{
+								username:'100477074@163.com',
+							},
+						},
 					}).then(function(res){
 						console.log(res);
 						console.log('修改密码成功！');

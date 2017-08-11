@@ -7,8 +7,9 @@ module.exports={
 	output:{
         //output最起码要配置这两个
 		path:path.resolve(__dirname,'./dist'),//使用__dirname变量获取当前模块文件所在目录的完整绝对路径
-        filename: '[name].js',//根据入口生成的文件名字，如这里入口是main，所以就生成main.js
-        // filename: 'build.js',//指定的文件名字
+        // filename: '[name].js',//根据入口生成的文件名字，如这里入口是main，所以就生成main.js
+        filename: 'build.js',//指定的文件名
+        publicPath:'/dist/',//这句不能删，删除之后就不会自动编译了，每次都要先webpack，npm run dev
 	},
 	module: {
         rules: [
