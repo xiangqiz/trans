@@ -1,0 +1,1222 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>IconFont</title>
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="iconfont.css">
+</head>
+<body>
+    <div class="main markdown">
+        <h1>IconFont 图标</h1>
+        <ul class="icon_lists clear">
+            
+                <li>
+                <i class="icon iconfont icon-yansezhuanhuan"></i>
+                    <div class="name">颜色 [转换]</div>
+                    <div class="fontclass">.icon-yansezhuanhuan</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-normal-sort"></i>
+                    <div class="name">升降序</div>
+                    <div class="fontclass">.icon-normal-sort</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-justify"></i>
+                    <div class="name">align justagment</div>
+                    <div class="fontclass">.icon-justify</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-desc"></i>
+                    <div class="name">降序</div>
+                    <div class="fontclass">.icon-desc</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-return2"></i>
+                    <div class="name">返回</div>
+                    <div class="fontclass">.icon-return2</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-asc"></i>
+                    <div class="name">降序</div>
+                    <div class="fontclass">.icon-asc</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-first"></i>
+                    <div class="name">首页-第一页</div>
+                    <div class="fontclass">.icon-first</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-drop"></i>
+                    <div class="name">首页-显示下拉框</div>
+                    <div class="fontclass">.icon-drop</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-sort"></i>
+                    <div class="name">首页-排序</div>
+                    <div class="fontclass">.icon-sort</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-newfolder"></i>
+                    <div class="name">首页-新建文件夹</div>
+                    <div class="fontclass">.icon-newfolder</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-recycle"></i>
+                    <div class="name">首页-回收站</div>
+                    <div class="fontclass">.icon-recycle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-last"></i>
+                    <div class="name">首页-最后一页</div>
+                    <div class="fontclass">.icon-last</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-history"></i>
+                    <div class="name">首页-浏览历史</div>
+                    <div class="fontclass">.icon-history</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-close"></i>
+                    <div class="name">首页-关闭</div>
+                    <div class="fontclass">.icon-close</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-report"></i>
+                    <div class="name">首页-我的报告</div>
+                    <div class="fontclass">.icon-report</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-edit"></i>
+                    <div class="name">首页-编辑报告</div>
+                    <div class="fontclass">.icon-edit</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-forward"></i>
+                    <div class="name">前进</div>
+                    <div class="fontclass">.icon-forward</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-backward"></i>
+                    <div class="name">后退</div>
+                    <div class="fontclass">.icon-backward</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-page-next"></i>
+                    <div class="name">下一页</div>
+                    <div class="fontclass">.icon-page-next</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-refresh"></i>
+                    <div class="name">刷新</div>
+                    <div class="fontclass">.icon-refresh</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-page-pre"></i>
+                    <div class="name">上一页</div>
+                    <div class="fontclass">.icon-page-pre</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-hidedrop"></i>
+                    <div class="name">三角右</div>
+                    <div class="fontclass">.icon-hidedrop</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-showdrop"></i>
+                    <div class="name">三角下</div>
+                    <div class="fontclass">.icon-showdrop</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-search"></i>
+                    <div class="name">搜索</div>
+                    <div class="fontclass">.icon-search</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-redo"></i>
+                    <div class="name">5取消撤销</div>
+                    <div class="fontclass">.icon-redo</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-design-refresh"></i>
+                    <div class="name">3刷新</div>
+                    <div class="fontclass">.icon-design-refresh</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-dbl-arrow-right"></i>
+                    <div class="name">0展开</div>
+                    <div class="fontclass">.icon-dbl-arrow-right</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-select"></i>
+                    <div class="name">2选择</div>
+                    <div class="fontclass">.icon-select</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-line"></i>
+                    <div class="name">6折线图</div>
+                    <div class="fontclass">.icon-line</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-undo"></i>
+                    <div class="name">4撤销</div>
+                    <div class="fontclass">.icon-undo</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-dbl-arrow-left"></i>
+                    <div class="name">1收起</div>
+                    <div class="fontclass">.icon-dbl-arrow-left</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-bar"></i>
+                    <div class="name">7柱状图</div>
+                    <div class="fontclass">.icon-bar</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-pie"></i>
+                    <div class="name">8饼图</div>
+                    <div class="fontclass">.icon-pie</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-radar"></i>
+                    <div class="name">9雷达图</div>
+                    <div class="fontclass">.icon-radar</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-dataobj"></i>
+                    <div class="name">11数据对象</div>
+                    <div class="fontclass">.icon-dataobj</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-text"></i>
+                    <div class="name">13文本框</div>
+                    <div class="fontclass">.icon-text</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-rectangle"></i>
+                    <div class="name">15图形</div>
+                    <div class="fontclass">.icon-rectangle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-model"></i>
+                    <div class="name">18模型工厂</div>
+                    <div class="fontclass">.icon-model</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-param"></i>
+                    <div class="name">16参数</div>
+                    <div class="fontclass">.icon-param</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-save"></i>
+                    <div class="name">19保存</div>
+                    <div class="fontclass">.icon-save</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-image"></i>
+                    <div class="name">14图片</div>
+                    <div class="fontclass">.icon-image</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-new"></i>
+                    <div class="name">21新建</div>
+                    <div class="fontclass">.icon-new</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-tool-menu"></i>
+                    <div class="name">22菜单</div>
+                    <div class="fontclass">.icon-tool-menu</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-arrow-right"></i>
+                    <div class="name">23收起</div>
+                    <div class="fontclass">.icon-arrow-right</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-arrow-left"></i>
+                    <div class="name">24展开</div>
+                    <div class="fontclass">.icon-arrow-left</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-geo"></i>
+                    <div class="name">10地图</div>
+                    <div class="fontclass">.icon-geo</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-view"></i>
+                    <div class="name">17预览</div>
+                    <div class="fontclass">.icon-view</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-table"></i>
+                    <div class="name">12表格-29</div>
+                    <div class="fontclass">.icon-table</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-saveas"></i>
+                    <div class="name">20另存为-45</div>
+                    <div class="fontclass">.icon-saveas</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-title"></i>
+                    <div class="name">1标题</div>
+                    <div class="fontclass">.icon-title</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-font"></i>
+                    <div class="name">2字体颜色</div>
+                    <div class="fontclass">.icon-font</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-font-family"></i>
+                    <div class="name">4字体</div>
+                    <div class="fontclass">.icon-font-family</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-horizontal-left"></i>
+                    <div class="name">5左对齐</div>
+                    <div class="fontclass">.icon-horizontal-left</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-vertical-bottom"></i>
+                    <div class="name">10下对齐</div>
+                    <div class="fontclass">.icon-vertical-bottom</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-horizontal-center"></i>
+                    <div class="name">6垂直居中</div>
+                    <div class="fontclass">.icon-horizontal-center</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-horizontal-right"></i>
+                    <div class="name">7右对齐</div>
+                    <div class="fontclass">.icon-horizontal-right</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-vertical-top"></i>
+                    <div class="name">8上对齐</div>
+                    <div class="fontclass">.icon-vertical-top</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-vertical-middle"></i>
+                    <div class="name">9水平居中</div>
+                    <div class="fontclass">.icon-vertical-middle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-legend"></i>
+                    <div class="name">11图例</div>
+                    <div class="fontclass">.icon-legend</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-horizontal"></i>
+                    <div class="name">12字体横排</div>
+                    <div class="fontclass">.icon-horizontal</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-height"></i>
+                    <div class="name">14行高</div>
+                    <div class="fontclass">.icon-height</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-vertical"></i>
+                    <div class="name">13字体竖排</div>
+                    <div class="fontclass">.icon-vertical</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-top"></i>
+                    <div class="name">17上边距</div>
+                    <div class="fontclass">.icon-top</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-width"></i>
+                    <div class="name">15行宽</div>
+                    <div class="fontclass">.icon-width</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-bottom"></i>
+                    <div class="name">18下边距</div>
+                    <div class="fontclass">.icon-bottom</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-right"></i>
+                    <div class="name">20右边距</div>
+                    <div class="fontclass">.icon-right</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-direction"></i>
+                    <div class="name">21坐标轴</div>
+                    <div class="fontclass">.icon-direction</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-linewidth"></i>
+                    <div class="name">24边框宽度</div>
+                    <div class="fontclass">.icon-linewidth</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-borderstyle"></i>
+                    <div class="name">25边框线性</div>
+                    <div class="fontclass">.icon-borderstyle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-series"></i>
+                    <div class="name">22系列</div>
+                    <div class="fontclass">.icon-series</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-dropcolor"></i>
+                    <div class="name">23颜色-68</div>
+                    <div class="fontclass">.icon-dropcolor</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-left"></i>
+                    <div class="name">19左边距</div>
+                    <div class="fontclass">.icon-left</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-opacity"></i>
+                    <div class="name">29透明度</div>
+                    <div class="fontclass">.icon-opacity</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-bgcolor"></i>
+                    <div class="name">27填充背景色</div>
+                    <div class="fontclass">.icon-bgcolor</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-bgAndBorder"></i>
+                    <div class="name">26背景</div>
+                    <div class="fontclass">.icon-bgAndBorder</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-alignmiddle"></i>
+                    <div class="name">33居中对齐</div>
+                    <div class="fontclass">.icon-alignmiddle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-alignleft"></i>
+                    <div class="name">32左对齐</div>
+                    <div class="fontclass">.icon-alignleft</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-alignright"></i>
+                    <div class="name">34右对齐</div>
+                    <div class="fontclass">.icon-alignright</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-bold"></i>
+                    <div class="name">36加粗</div>
+                    <div class="fontclass">.icon-bold</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-filter"></i>
+                    <div class="name">35筛选</div>
+                    <div class="fontclass">.icon-filter</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-underline"></i>
+                    <div class="name">38下划线</div>
+                    <div class="fontclass">.icon-underline</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-order"></i>
+                    <div class="name">39样式</div>
+                    <div class="fontclass">.icon-order</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-table-value"></i>
+                    <div class="name">42数值</div>
+                    <div class="fontclass">.icon-table-value</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-grid"></i>
+                    <div class="name">43内栏</div>
+                    <div class="fontclass">.icon-grid</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-italic"></i>
+                    <div class="name">37倾斜</div>
+                    <div class="fontclass">.icon-italic</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-table-title"></i>
+                    <div class="name">41表头</div>
+                    <div class="fontclass">.icon-table-title</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-total-reset"></i>
+                    <div class="name">30撤销</div>
+                    <div class="fontclass">.icon-total-reset</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-box"></i>
+                    <div class="name">40图形样式</div>
+                    <div class="fontclass">.icon-box</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-image-source"></i>
+                    <div class="name">45图片源</div>
+                    <div class="fontclass">.icon-image-source</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-text-font"></i>
+                    <div class="name">44字体</div>
+                    <div class="fontclass">.icon-text-font</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-horizontal-align"></i>
+                    <div class="name">46对齐方式</div>
+                    <div class="fontclass">.icon-horizontal-align</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-shape"></i>
+                    <div class="name">47形状</div>
+                    <div class="fontclass">.icon-shape</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-circle-small"></i>
+                    <div class="name">未标题-1-78</div>
+                    <div class="fontclass">.icon-circle-small</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-circle-full"></i>
+                    <div class="name">未标题-1-76</div>
+                    <div class="fontclass">.icon-circle-full</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-circle-empty"></i>
+                    <div class="name">未标题-1-77</div>
+                    <div class="fontclass">.icon-circle-empty</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-report-page"></i>
+                    <div class="name">页面</div>
+                    <div class="fontclass">.icon-report-page</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-pagesize"></i>
+                    <div class="name">页面尺寸</div>
+                    <div class="fontclass">.icon-pagesize</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-radio-selected"></i>
+                    <div class="name">未标题-1-61</div>
+                    <div class="fontclass">.icon-radio-selected</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-radio-unselected"></i>
+                    <div class="name">未标题-1-62</div>
+                    <div class="fontclass">.icon-radio-unselected</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-checkbox"></i>
+                    <div class="name">未标题-1-63</div>
+                    <div class="fontclass">.icon-checkbox</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-checkbox-no"></i>
+                    <div class="name">未标题-1-64</div>
+                    <div class="fontclass">.icon-checkbox-no</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-valign-bottom"></i>
+                    <div class="name">未标题-1-67</div>
+                    <div class="fontclass">.icon-valign-bottom</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-valign-middle"></i>
+                    <div class="name">未标题-1-68</div>
+                    <div class="fontclass">.icon-valign-middle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-font-size"></i>
+                    <div class="name">未标题-1-65</div>
+                    <div class="fontclass">.icon-font-size</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-valign-top"></i>
+                    <div class="name">未标题-1-66</div>
+                    <div class="fontclass">.icon-valign-top</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-report-show"></i>
+                    <div class="name">17预览</div>
+                    <div class="fontclass">.icon-report-show</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-dataformat"></i>
+                    <div class="name">未标题-1-43</div>
+                    <div class="fontclass">.icon-dataformat</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-circle-large"></i>
+                    <div class="name">大圆点 circle-large</div>
+                    <div class="fontclass">.icon-circle-large</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-dashSpanLine"></i>
+                    <div class="name">未标题-1-74</div>
+                    <div class="fontclass">.icon-dashSpanLine</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-rowLine"></i>
+                    <div class="name">未标题-1-71</div>
+                    <div class="fontclass">.icon-rowLine</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-rectangle1"></i>
+                    <div class="name">未标题-1-76</div>
+                    <div class="fontclass">.icon-rectangle1</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-right-triangle"></i>
+                    <div class="name">未标题-1-78</div>
+                    <div class="fontclass">.icon-right-triangle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-circle"></i>
+                    <div class="name">未标题-1-75</div>
+                    <div class="fontclass">.icon-circle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-spanLine"></i>
+                    <div class="name">未标题-1-72</div>
+                    <div class="fontclass">.icon-spanLine</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-left-triangle"></i>
+                    <div class="name">未标题-1-79</div>
+                    <div class="fontclass">.icon-left-triangle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-righted_triangle"></i>
+                    <div class="name">未标题-1-77</div>
+                    <div class="fontclass">.icon-righted_triangle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-left-tips"></i>
+                    <div class="name">未标题-1-81</div>
+                    <div class="fontclass">.icon-left-tips</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-dashRowLine"></i>
+                    <div class="name">未标题-1-73</div>
+                    <div class="fontclass">.icon-dashRowLine</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-brace"></i>
+                    <div class="name">未标题-1-83</div>
+                    <div class="fontclass">.icon-brace</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-cross"></i>
+                    <div class="name">未标题-1-85</div>
+                    <div class="fontclass">.icon-cross</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-left-arrow1"></i>
+                    <div class="name">未标题-1-86</div>
+                    <div class="fontclass">.icon-left-arrow1</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-right-tips"></i>
+                    <div class="name">未标题-1-82</div>
+                    <div class="fontclass">.icon-right-tips</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-bubble-text"></i>
+                    <div class="name">未标题-1-80</div>
+                    <div class="fontclass">.icon-bubble-text</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-five-star"></i>
+                    <div class="name">未标题-1-88</div>
+                    <div class="fontclass">.icon-five-star</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-echolon"></i>
+                    <div class="name">未标题-1-89</div>
+                    <div class="fontclass">.icon-echolon</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-right-arrow"></i>
+                    <div class="name">未标题-1-87</div>
+                    <div class="fontclass">.icon-right-arrow</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-delighted"></i>
+                    <div class="name">未标题-1-84</div>
+                    <div class="fontclass">.icon-delighted</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-line-left-arrow"></i>
+                    <div class="name">未标题-1-92</div>
+                    <div class="fontclass">.icon-line-left-arrow</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-fork"></i>
+                    <div class="name">未标题-1-91</div>
+                    <div class="fontclass">.icon-fork</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-drips"></i>
+                    <div class="name">未标题-1-90</div>
+                    <div class="fontclass">.icon-drips</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-one-lineHalf-arrow"></i>
+                    <div class="name">未标题-1-94</div>
+                    <div class="fontclass">.icon-one-lineHalf-arrow</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-line-right-arrow-copy"></i>
+                    <div class="name">未标题-1-93</div>
+                    <div class="fontclass">.icon-line-right-arrow-copy</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-one-line-arrow"></i>
+                    <div class="name">未标题-1-95</div>
+                    <div class="fontclass">.icon-one-line-arrow</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-dbllink"></i>
+                    <div class="name">未标题-1-97</div>
+                    <div class="fontclass">.icon-dbllink</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-add-format"></i>
+                    <div class="name">未标题-1-99</div>
+                    <div class="fontclass">.icon-add-format</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-return"></i>
+                    <div class="name">未标题-1-98</div>
+                    <div class="fontclass">.icon-return</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-dbl-arrow"></i>
+                    <div class="name">未标题-1-96</div>
+                    <div class="fontclass">.icon-dbl-arrow</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-left-arrow"></i>
+                    <div class="name">未标题-1-100</div>
+                    <div class="fontclass">.icon-left-arrow</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-radar-setting"></i>
+                    <div class="name">SEMP数据易4-04</div>
+                    <div class="fontclass">.icon-radar-setting</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-circle-close"></i>
+                    <div class="name">关闭-01</div>
+                    <div class="fontclass">.icon-circle-close</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-data-obj"></i>
+                    <div class="name">未标题-2-02</div>
+                    <div class="fontclass">.icon-data-obj</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-top-right"></i>
+                    <div class="name">未标题-2-05</div>
+                    <div class="fontclass">.icon-top-right</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-top-center"></i>
+                    <div class="name">未标题-2-04</div>
+                    <div class="fontclass">.icon-top-center</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-to-dataobj"></i>
+                    <div class="name">未标题-2-06</div>
+                    <div class="fontclass">.icon-to-dataobj</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-top-left"></i>
+                    <div class="name">未标题-2-03</div>
+                    <div class="fontclass">.icon-top-left</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-datamodel"></i>
+                    <div class="name">数据模型</div>
+                    <div class="fontclass">.icon-datamodel</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-senior"></i>
+                    <div class="name">高级</div>
+                    <div class="fontclass">.icon-senior</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-report-param"></i>
+                    <div class="name">2参数</div>
+                    <div class="fontclass">.icon-report-param</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-add-dimension-param"></i>
+                    <div class="name">SEMP数据易4-09</div>
+                    <div class="fontclass">.icon-add-dimension-param</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-add-time-param"></i>
+                    <div class="name">SEMP数据易4-07</div>
+                    <div class="fontclass">.icon-add-time-param</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-sql"></i>
+                    <div class="name">sqlserver</div>
+                    <div class="fontclass">.icon-sql</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-mysql"></i>
+                    <div class="name">mysql</div>
+                    <div class="fontclass">.icon-mysql</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-oracle"></i>
+                    <div class="name">oracle</div>
+                    <div class="fontclass">.icon-oracle</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-row-echo-copy"></i>
+                    <div class="name">SEMP数据易4-15</div>
+                    <div class="fontclass">.icon-row-echo-copy</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-span-echo"></i>
+                    <div class="name">SEMP数据易4-14</div>
+                    <div class="fontclass">.icon-span-echo</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-dataSource-tab"></i>
+                    <div class="name">数据源</div>
+                    <div class="fontclass">.icon-dataSource-tab</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-modelLibrary-tab"></i>
+                    <div class="name">模型库</div>
+                    <div class="fontclass">.icon-modelLibrary-tab</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-new-model"></i>
+                    <div class="name">新建</div>
+                    <div class="fontclass">.icon-new-model</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-model-sql"></i>
+                    <div class="name">SEMP数据易4-21</div>
+                    <div class="fontclass">.icon-model-sql</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-name-edit"></i>
+                    <div class="name">SEMP数据易4-19</div>
+                    <div class="fontclass">.icon-name-edit</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-enlarge"></i>
+                    <div class="name">SEMP数据易4-24</div>
+                    <div class="fontclass">.icon-enlarge</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-move"></i>
+                    <div class="name">SEMP数据易4-23</div>
+                    <div class="fontclass">.icon-move</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-property"></i>
+                    <div class="name">SEMP数据易4-20</div>
+                    <div class="fontclass">.icon-property</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-model-view"></i>
+                    <div class="name">SEMP数据易4-22</div>
+                    <div class="fontclass">.icon-model-view</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-view-sql"></i>
+                    <div class="name">SEMP数据易4-26</div>
+                    <div class="fontclass">.icon-view-sql</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-add"></i>
+                    <div class="name">SEMP数据易4-31</div>
+                    <div class="fontclass">.icon-add</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-inner-join"></i>
+                    <div class="name">SEMP数据易4-27</div>
+                    <div class="fontclass">.icon-inner-join</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-right-join"></i>
+                    <div class="name">SEMP数据易4-29</div>
+                    <div class="fontclass">.icon-right-join</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-left-join"></i>
+                    <div class="name">SEMP数据易4-30</div>
+                    <div class="fontclass">.icon-left-join</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-table-sql"></i>
+                    <div class="name">SEMP数据易4-33</div>
+                    <div class="fontclass">.icon-table-sql</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-relation"></i>
+                    <div class="name">SEMP数据易4-32</div>
+                    <div class="fontclass">.icon-relation</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-full-join"></i>
+                    <div class="name">SEMP数据易4-28</div>
+                    <div class="fontclass">.icon-full-join</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-narrow"></i>
+                    <div class="name">SEMP数据易4-35</div>
+                    <div class="fontclass">.icon-narrow</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-add-param"></i>
+                    <div class="name">SEMP数据易4-36</div>
+                    <div class="fontclass">.icon-add-param</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-sql-relation"></i>
+                    <div class="name">关联 表单 表格 关系</div>
+                    <div class="fontclass">.icon-sql-relation</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-circle-delete"></i>
+                    <div class="name">SEMP数据易4-37</div>
+                    <div class="fontclass">.icon-circle-delete</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-arrow-down"></i>
+                    <div class="name">23收起</div>
+                    <div class="fontclass">.icon-arrow-down</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-confirm"></i>
+                    <div class="name">SEMP数据易4-40</div>
+                    <div class="fontclass">.icon-confirm</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-check-no-border"></i>
+                    <div class="name">钩</div>
+                    <div class="fontclass">.icon-check-no-border</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-report-file"></i>
+                    <div class="name">app报表</div>
+                    <div class="fontclass">.icon-app-report-file</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-folder"></i>
+                    <div class="name">app文件夹</div>
+                    <div class="fontclass">.icon-app-folder</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-report"></i>
+                    <div class="name">app主题报表</div>
+                    <div class="fontclass">.icon-app-report</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-canvas"></i>
+                    <div class="name">app画布</div>
+                    <div class="fontclass">.icon-app-canvas</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-my-account"></i>
+                    <div class="name">app个人中心</div>
+                    <div class="fontclass">.icon-my-account</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-search"></i>
+                    <div class="name">app搜索</div>
+                    <div class="fontclass">.icon-app-search</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-arrow-left"></i>
+                    <div class="name">app返回</div>
+                    <div class="fontclass">.icon-app-arrow-left</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-list"></i>
+                    <div class="name">app列表</div>
+                    <div class="fontclass">.icon-app-list</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-arrow-right"></i>
+                    <div class="name">app向右</div>
+                    <div class="fontclass">.icon-app-arrow-right</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-exit-app"></i>
+                    <div class="name">app退出</div>
+                    <div class="fontclass">.icon-exit-app</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-edit-password"></i>
+                    <div class="name">app修改密码</div>
+                    <div class="fontclass">.icon-edit-password</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-eye-close"></i>
+                    <div class="name">app 不可见</div>
+                    <div class="fontclass">.icon-eye-close</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-eye-visible"></i>
+                    <div class="name">app密码可见</div>
+                    <div class="fontclass">.icon-eye-visible</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-cross-sort"></i>
+                    <div class="name">app平铺</div>
+                    <div class="fontclass">.icon-app-cross-sort</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-login-url"></i>
+                    <div class="name">app  企业标识码</div>
+                    <div class="fontclass">.icon-app-login-url</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-login-name"></i>
+                    <div class="name">app登录</div>
+                    <div class="fontclass">.icon-app-login-name</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-app-login-password"></i>
+                    <div class="name">app密码</div>
+                    <div class="fontclass">.icon-app-login-password</div>
+                </li>
+            
+                <li>
+                <i class="icon iconfont icon-rounded-corner"></i>
+                    <div class="name">SEMP数据易4-42</div>
+                    <div class="fontclass">.icon-rounded-corner</div>
+                </li>
+            
+        </ul>
+
+        <h2 id="font-class-">font-class引用</h2>
+        <hr>
+
+        <p>font-class是unicode使用方式的一种变种，主要是解决unicode书写不直观，语意不明确的问题。</p>
+        <p>与unicode使用方式相比，具有如下特点：</p>
+        <ul>
+        <li>兼容性良好，支持ie8+，及所有现代浏览器。</li>
+        <li>相比于unicode语意明确，书写更直观。可以很容易分辨这个icon是什么。</li>
+        <li>因为使用class来定义图标，所以当要替换图标时，只需要修改class里面的unicode引用。</li>
+        <li>不过因为本质上还是使用的字体，所以多色图标还是不支持的。</li>
+        </ul>
+        <p>使用步骤如下：</p>
+        <h3 id="-fontclass-">第一步：引入项目下面生成的fontclass代码：</h3>
+
+
+        <pre><code class="lang-js hljs javascript"><span class="hljs-comment">&lt;link rel="stylesheet" type="text/css" href="./iconfont.css"&gt;</span></code></pre>
+        <h3 id="-">第二步：挑选相应图标并获取类名，应用于页面：</h3>
+        <pre><code class="lang-css hljs">&lt;<span class="hljs-selector-tag">i</span> <span class="hljs-selector-tag">class</span>="<span class="hljs-selector-tag">iconfont</span> <span class="hljs-selector-tag">icon-xxx</span>"&gt;&lt;/<span class="hljs-selector-tag">i</span>&gt;</code></pre>
+        <blockquote>
+        <p>"iconfont"是你项目下的font-family。可以通过编辑项目查看，默认是"iconfont"。</p>
+        </blockquote>
+    </div>
+</body>
+</html>

@@ -9,7 +9,7 @@ module.exports={
 		path:path.resolve(__dirname,'./dist'),//使用__dirname变量获取当前模块文件所在目录的完整绝对路径
         // filename: '[name].js',//根据入口生成的文件名字，如这里入口是main，所以就生成main.js
         filename: 'build.js',//指定的文件名
-        publicPath:'/dist/',//这句不能删，删除之后就不会自动编译了，每次都要先webpack，npm run dev
+        publicPath:'/assets/',//这句不能删，删除之后就不会自动编译了，每次都要先webpack，npm run dev
 	},
 	module: {
         rules: [
@@ -28,22 +28,20 @@ module.exports={
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]?[hash]'
-                }
-            }
-            //自己加的
-            ,
+                test: /\.(png|jpe?g|gif)(\?.*)?$/,
+                loader: 'url-loader?limit=8192&name=img/[hash:8].[name].[ext]'
+            },
             {
                 test: /\.css$/,
                 loader: "style-loader!css-loader"
-            }
-            ,
+            },
             {
                 test: /\.scss$/,
                 loader: "style-loader!css-loader!sass-loader!"//！是分隔符
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
+                loader: 'file-loader?limit=10000&name=fonts/[hash:8].[name].[ext]',
             }
         ]
     },
@@ -61,10 +59,11 @@ module.exports={
         })
     ],
     devServer: {//webpack-dev-server配置
-        historyApiFallback: true,//不跳转
         noInfo: true,
-        inline: true,//实时刷新
         port:9999,//修改端口号，防止与其他进程冲突
+        historyApiFallback: true,
+        hot: true,
+        inline: true,
     },
     performance: {
         hints: false

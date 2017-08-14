@@ -5,10 +5,16 @@ import aboutPage from './views/about.vue'
 import loginPage from './views/login.vue'
 import registerPage from './views/register.vue'
 import resetPasswordPage from './views/resetPassword.vue'
+import dropPluginPage from './views/dropPlugin.vue'
 
 Vue.use(Router)
 export default new Router({
     routes: [
+        {
+            path: '/plugins',
+            name: 'plugins',
+            component: dropPluginPage
+        },
         {
             path: '/home',
             name: 'home',
