@@ -6,10 +6,13 @@
 			<input type="button" value="登录" @click.stop="userLogin">
 			<input type="button" value="注册" @click.stop="toRegisterView">
 			<button class="changePsd" @click.stop="toResetPsdView">改密码</button>
+			<button @click.stop="changeVuex('tree')">测试vuex</button>
+			<input :value="vuexMessage" />
 		</div>
 	</div>
 </template>
 <script>
+	import { mapState ,mapActions} from 'vuex'
 	export default{
 		name:'login',
 		data(){
@@ -19,7 +22,26 @@
 				newPassWord:'123456',
 			}
 		},
+		// computed:mapState({
+		// 	vuexMessage:state=>state.message,
+		// 	// vuexMessage(){
+		// 	// 	return this.$store.state.message;
+		// 	// },
+		// }),
+		computed: {
+		  	...mapState({
+				vuexMessage:state=>state.plugins.currentPlugin,
+			})
+		},
 		methods:{
+			...mapActions({
+				changeVuex:'changePlugins',
+			}),
+			// changeVuex(str){
+			// 	this.$store.dispatch('changeMessage', {
+			// 	  newMsg: '10'
+			// 	})
+			// },
 			toResetPsdView(){
 				let target='http://localhost:9999/#/resetPsd';
 				window.open(target,"_blank");
