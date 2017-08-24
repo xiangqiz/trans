@@ -39,6 +39,7 @@ module.exports={
                 test: /\.scss$/,
                 loader: "style-loader!css-loader!sass-loader!"//！是分隔符
             },
+            // 解析阿里字体文件
             {
                 test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
                 loader: 'file-loader?limit=10000&name=fonts/[hash:8].[name].[ext]',
@@ -68,26 +69,6 @@ module.exports={
     performance: {
         hints: false
     },
+    //方便调试，有四种选项，eval-source-map适合小中型的
     devtool: '#eval-source-map'
-}
-
-if (process.env.NODE_ENV === 'production') {
-    module.exports.devtool = '#source-map'
-    // http://vue-loader.vuejs.org/en/workflow/production.html
-    module.exports.plugins = (module.exports.plugins || []).concat([
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
-        }),
-        new webpack.LoaderOptionsPlugin({
-            minimize: true
-        })
-    ])
 }

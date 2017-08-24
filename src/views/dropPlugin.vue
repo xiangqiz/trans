@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="pluginsContent">
 		<input class="dropOne" @click.stop="toggleDrop(clickDrop,$event)"
 			:value="123"
 			spellcheck="false" />
@@ -106,5 +106,30 @@
 	}
 </script>
 <style lang="scss" scoped>
+ // /* */ (多行注释会被编译到css文件)与 // (单行注释不会被编译到css文件)
+.img{
+	// background-image: url("../../../assets/img/loading.gif");
+	// background-position: center;
+	// background-size: contain;
+	// background-repeat:no-repeat;
+	
+	// 可以写成下面的属性嵌套
+	background:{
+		image:url("../../../assets/img/loading.gif");
+		position: center;
+		size: contain;
+		repeat:no-repeat;
+	}
+}
+// 占位符选择器
+%inlineBlock{
+	display:inline-block;
+	vertical-align:top;
+}
+.dropOne{
+	@extend %inlineBlock;
+	color:red;
+}
+$width:120px;
 
 </style>
