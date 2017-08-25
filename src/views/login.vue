@@ -78,7 +78,7 @@
 	}
 </script>
 <style lang="scss" scoped>
-	// 占位符选择器  %用法和. # 有什么不同呢？只是多了一种选择器？
+	// 占位符选择器  %用法和. # 一样，但是不会被加到变异后的样式中，防止冗余
 	%bgRed{
 		background:pink;
 	}
