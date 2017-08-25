@@ -6,7 +6,7 @@
 			<input type="button" value="登录" @click.stop="userLogin">
 			<input type="button" value="注册" @click.stop="toRegisterView">
 			<button class="changePsd" @click.stop="toResetPsdView">改密码</button>
-			<button @click.stop="changeVuex('tree')">vuex</button>
+			<button @click.stop="changeVuex('tree')">vuex-</button>
 			<input :value="vuexMessage" />
 		</div>
 	</div>
@@ -17,7 +17,7 @@
 		name:'login',
 		data(){
 			return{
-				username:'100477074@163.com',
+				username:'15091852318@qq.com',
 				password:'yu789987shi',
 				newPassWord:'123456',
 			}

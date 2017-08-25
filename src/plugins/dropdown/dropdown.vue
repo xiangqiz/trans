@@ -215,16 +215,15 @@
 				this.searchFlag=false;
 				return _myDropItems;
 			},
-			//下拉框定位
+			//下拉框定位(箭头函数不必在写let _this=this)
 			showFixed(){
-				let _this=this;
-				setTimeout(function(){
+				setTimeout(()=>{
 					//计算ul-dropdown的宽度
-					_this.calcShowWidth();
+					this.calcShowWidth();
 					//计算nanoscroller的高度
-					_this.calcNanoHeight();
+					this.calcNanoHeight();
 					//下拉框定位
-					_this.show(_this.defaults.el);
+					this.show(this.defaults.el);
 				},0)
 			},
 			//计算下拉框的宽度

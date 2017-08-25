@@ -115,7 +115,7 @@
 	
 	// 可以写成下面的属性嵌套
 	background:{
-		image:url("../../../assets/img/loading.gif");
+		image:url("");
 		position: center;
 		size: contain;
 		repeat:no-repeat;
