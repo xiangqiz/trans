@@ -7,6 +7,28 @@
 			:value="123"
 			spellcheck="false" />
 		<dropDownComponent :optObj="dropDownOpt" @chooseItem="getDropItems"></dropDownComponent>
+
+		
+		<button @click.stop="newFolder(true)">新建子文件</button>
+		<button @click.stop="newFolder('root')">新建根文件</button>
+		<button @click.stop="dblChangeName">双击改名字</button>
+		<button @click.stop="moveToNew">移动位置</button>
+		<div class="treeBlock">
+			<Item
+				:sourceData="treeData"
+				:treeT="treeSettingData"
+				v-if="isTreeShow"
+				ref="folderTree"
+				:isAdd="addFolder"
+
+				@changeNewName="getAddData"
+				@chooseTreeItem="getTreeData"
+				@changeDbNewName="getDblChangeData"
+				@getDefaultData="getDefaultData"
+				@getDragData="getDragData"
+				>
+			</Item>
+		</div>
 	</div>
 </template>
 <script>
@@ -14,6 +36,36 @@
 		name:'dropPlugin',
 		data(){
 			return {
+				addFolder:false,
+				treeData:[
+					{name:'语文',id:'1',pid:'0'},
+					{name:'数学',id:'2',pid:'3'},
+					{name:'英语',id:'3',pid:'1'},
+					{name:'化学',id:'4',pid:'1'},
+					{name:'物理',id:'5',pid:'1'},
+					{name:'生物',id:'6',pid:'4'},
+					{name:'历史',id:'7',pid:'4'},
+					{name:'地理',id:'8',pid:'6'},
+					{name:'政治',id:'9',pid:'7'},
+					{name:'自然',id:'10',pid:'10'},
+					{name:'社会',id:'11',pid:'2'},
+					{name:'体育',id:'12',pid:'0'},
+					{name:'音乐',id:'13',pid:'12'},
+					{name:'美术',id:'14',pid:'12'}
+				],
+				treeSettingData:{
+					'id': 'id',
+                    'name': 'name',
+                    'pId': 'pid',
+                    // 'rootId': 'model_type_rootid',
+                    'defaultItem': true,
+                    'isDbClick': true,
+                    'isDrag': true,
+                    'addDefField': '新建文件夹',
+                    'defaultExpand': 'first'//默认选中“none”有bug
+				},
+				isTreeShow:true,
+
 				dropResult:{},
 				clickDrop:{
 					name:'borderRadius',
@@ -61,7 +113,6 @@
 			}
 		},
 		watch:{
-
 		},
 		computed:{
 			dropDownOpt(){
@@ -75,6 +126,31 @@
 			},
 		},
 		methods:{
+			newFolder(data){
+				if(data && data==='root'){
+					this.addFolder='root';
+				}else if(data){
+					this.addFolder=true;
+				}
+			},
+			//单击选中项
+			getTreeData(msg){
+				console.log(msg);
+			},
+			//新建文件夹信息
+			getAddData(msg){
+				console.log(msg);
+				this.addFolder=false;
+			},
+			getDblChangeData(msg){
+				console.log(msg);
+			},
+			getDefaultData(){
+
+			},
+			getDragData(msg){
+				console.log(msg);
+			},
 			toggleDrop(dropOpt,e){
 				this.curDrop=dropOpt;
 				dropOpt.isShow=!dropOpt.isShow;
@@ -106,30 +182,39 @@
 	}
 </script>
 <style lang="scss" scoped>
- // /* */ (多行注释会被编译到css文件)与 // (单行注释不会被编译到css文件)
-.img{
-	// background-image: url("../../../assets/img/loading.gif");
-	// background-position: center;
-	// background-size: contain;
-	// background-repeat:no-repeat;
-	
-	// 可以写成下面的属性嵌套
-	background:{
-		image:url("");
-		position: center;
-		size: contain;
-		repeat:no-repeat;
+	// @import '../assets/sass/reset.scss';
+	.treeBlock{
+		width:400px;
+		height:auto;
+		position:relative;
+		// background:#eee;
 	}
-}
-// 占位符选择器
-%inlineBlock{
-	display:inline-block;
-	vertical-align:top;
-}
-.dropOne{
-	@extend %inlineBlock;
-	color:red;
-}
-$width:120px;
+	
+
+ // /* */ (多行注释会被编译到css文件)与 // (单行注释不会被编译到css文件)
+	// .img{
+	// 	// background-image: url("../../../assets/img/loading.gif");
+	// 	// background-position: center;
+	// 	// background-size: contain;
+	// 	// background-repeat:no-repeat;
+		
+	// 	// 可以写成下面的属性嵌套
+	// 	background:{
+	// 		image:url("");
+	// 		position: center;
+	// 		size: contain;
+	// 		repeat:no-repeat;
+	// 	}
+	// }
+	// // 占位符选择器
+	// %inlineBlock{
+	// 	display:inline-block;
+	// 	vertical-align:top;
+	// }
+	// .dropOne{
+	// 	@extend %inlineBlock;
+	// 	color:red;
+	// }
+	// $width:120px;
 
 </style>
