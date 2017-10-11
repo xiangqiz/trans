@@ -1,7 +1,91 @@
+<!-- 功能：下拉选择选项
+	（1）可自定义 初始化展开还是收起，是否启用搜索功能，是否显示分割线，是否展示树状图
+	（2）可自定义 样式
+	（3）可自定义 选项集合 默认显示值（不定义则默认显示dropItems的第一条数据）
+	用法：
+	<DropDown :optObj='optBorderWidth' @chooseItem="getWidth"></DropDown>
+	//显示下拉框
+	showWidthBorder(ev){
+		this.optBorderWidth.isShow=!this.optBorderWidth.isShow
+	},
+	//接收下拉框传的值
+	getWidth(msg){
+		console.log(msg);
+	},
+	//传给下拉框的对象
+	optBorderWeight:{
+		dropItems:[                //必传
+			{type:'0px',val:'0px'},
+			{type:'1px',val:'1px'},
+			{type:'2px',val:'2px'},
+			{type:'3px',val:'3px'},
+			{type:'4px',val:'4px'},
+			{type:'5px',val:'5px'},
+		],
+		el:$event.target,//必传  (点击的元素)
+
+		showField:'val',   //realField和showField任传一个
+		realField:'type',  //realField和showField任传一个
+		defaultItem:'5px', //传realField的值
+		dropDownStyle:{    //可选（可改变下拉框的大小等样式）
+			width:'100px',可以写固定值如："200px",也可以设置自适应"auto"
+		}
+		liSearchStyle:{   //可选（可自定义搜索框的高度）
+			height:'30px',
+		},
+		liDropStyle:{  //可选（可自定义每个item的高度）
+			height:'35px',
+		},
+		noDataStyle:{   //可选（可自定义没有数据显示时的高度）
+			height:'40px',
+		},
+		noData:'暂无数据...',//没有数据的显示值
+		noSearchData:'暂无搜索数据...',//没有默认数据的显示值
+		title:'边框圆角',//下拉框的标题
+		checkOk:'icon-checkbox',//多选框 选中的字体样式
+		checkNo:'icon-checkbox-no',//多选框 未选中的字体样式
+		isDecorate:false,//是否显示每条数聚前面的装饰符
+		listDecorate:'icon-dot',//可以自定义装饰符的样式
+		spaceTop:5,//定位的top值
+		beforeStyle:{},//下拉框前面加的小元素样式
+		isBefore:false,//下拉框前面是否加小元素
+		ulDropStyle:{},//下拉框里面一层的样式
+	},
+
+	默认设置如下：
+					defaultSet:{
+					dropItems:[],
+					showField:'val',
+					realField:'type',
+					isShow:false,//初始化 是否显示下拉框
+					isSearch:false,//是否要搜索功能
+					isDiver:true,//是否显示分割线
+					isTree:false,//是否以树状形式展示
+					isMultiple:false,//是否可以多选
+					noData:'暂无数据...',
+					noSearchData:'暂无搜索数据...',
+					placeholder:'请输入',
+					defaultItem:'',//单选传字符串 真实值 ''，多选传数组 真实值 []
+					dropDownStyle:{
+						maxHeight:'230px',
+					},
+					liSearchStyle:{
+						height:'30px',
+					},
+					liDropStyle:{
+						height:'35px',
+					},
+					noDataStyle:{
+						height:'40px',
+					},
+					beforeStyle:{},//下拉框前面加的小元素样式
+					isBefore:false,//下拉框前面是否加小元素
+				},
+-->
 <template>
 	<div class="dropDownPlugins" v-if="defaults.isShow"
 	:style='[showOffset,defaults.dropDownStyle]' >
-		<ul class="ul-dropdown" @keydown.down @click.stop >
+		<ul class="ul-dropdown">
 			<div class="dropdown-title" v-if="defaults.title">{{defaults.title}}</div>
 			<!-- 搜索框div -->
 			<li class="li-search" v-if="defaults.isSearch" :style="[defaults.liSearchStyle]" @click.stop>
@@ -18,9 +102,10 @@
 			<li
 				class="li-dropdown" 
 				v-for="(item,index) in myDropItems" 
+				:style="[defaults.liDropStyle]"
+				:key="'item'+index"
 				:value='item[defaults.realField]'
 				:title="item[defaults.showField]"
-				:style="[defaults.liDropStyle]"
 				@click.stop="chooseItem(item)" @mousedown.stop.prevent 
 				:class="{
 				'disabled':(itemsChoosed.length===defaults.multiLength) && (!itemsChoosed.includes(item)),
@@ -49,8 +134,8 @@
 		data () {
 			return {
 				searchName:'',//搜索功能input处显示值
-				itemsChoosed:[],//存放多选结果集
 				searchFlag:false,//搜索功能开关
+				itemsChoosed:[],//存放多选结果集
 				showOffset: {},//存放dropdown的定位信息
 				defaultSet:{
 					title:'', //下拉框标题

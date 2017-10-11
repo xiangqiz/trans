@@ -1,17 +1,14 @@
-<!--
-    树形组件，单选，
-    用法：父组件
-    //sourceData为原始数据，（必传）
+<!--//sourceData为原始数据，（必传）
     //treeT为属性设置(object格式)，（必传）
     <Tree
         :sourceData="optTree.dropItems"
         :treeT="optTree.options"
         v-if="optTree.isShow"
-        @chooseTreeItem="getTreeData"
-        @changeNewName="getAddData"
-        @changeDbNewName="getChangeData"//接收双击改名字的值
-        @getDefaultData="getDefaultData"
-        @getDragData="getDragData"//接收拖拽的对象及新的父元素
+        @chooseTreeItem="getTreeData"    // 单选选项
+        @changeNewName="getAddData"      //新建
+        @changeDbNewName="getChangeData" //双击改名字
+        @getDefaultData="getDefaultData" // 设置默认值
+        @getDragData="getDragData"       // 拖拽移位置
         >
     </Tree>
     外部通过ref调用setSelect方法
@@ -67,7 +64,7 @@
         <div class="show-validate" v-if="showValidate">
             {{defaultTreeT.validateError}}
         </div>
-        <li v-for="model in treeData" class="tree-wrapper">
+        <li v-for="(model,index) in treeData" class="tree-wrapper" :key = "index">
             <div class="show-node" :class="{
 				choosed:(trueSelected.length>0) && (trueSelected[0]==model[defaultTreeT.id]),
 				dragToNode:trueDragSelected[0]===model[defaultTreeT.id]}">
@@ -90,7 +87,7 @@
                     {{model[defaultTreeT.name]}}
                     <span id="show-id" :style="{display:'none'}">{{model[defaultTreeT.id]}}</span>
                 </div>
-                <input class="db-change-input" type="text" :value="model[defaultTreeT.name]"
+                <input class="db-change-input" type="text"
                        v-model="dbChangeNewName"
                        v-show="treeT.isDbClick && isDbClicked && (trueDbSelected.length>0) && (trueDbSelected[0]==model[defaultTreeT.id])"
                        spellcheck="false" @blur.stop="changeDbNewName(model)" v-focus
@@ -102,7 +99,7 @@
                     <span class="toggle"></span>
                 </div>
                 <div class="imgFolder"></div>
-                <input class="add-children-input" :value="newName" v-model="newName"
+                <input class="add-children-input" v-model="newName"
                        spellcheck="false"
                        @blur.stop="changeNewName(model)" v-focus @keydown.stop/>
             </div>
@@ -129,7 +126,7 @@
                 <span class="toggle"></span>
             </div>
             <div class="imgFolder"></div>
-            <input class="add-root-input" :value="newName" v-model="newName" spellcheck="false"
+            <input class="add-root-input" v-model="newName" spellcheck="false"
                    @blur.stop="changeNewName()" v-focus @keydown.stop/>
         </div>
         <div class="move-tree-block"

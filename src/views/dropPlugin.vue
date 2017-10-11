@@ -1,42 +1,26 @@
 <template>
-	<div class="pluginsContent">
-		<input class="dropOne" @click.stop="toggleDrop(clickDrop,$event)"
-			:value="123"
-			spellcheck="false" />
-		<input class="dropMulti" @click.stop="toggleDrop(multiDrop,$event)"
-			:value="123"
-			spellcheck="false" />
-		<dropDownComponent :optObj="dropDownOpt" @chooseItem="getDropItems"></dropDownComponent>
-
-		
-		<button @click.stop="newFolder(true)">新建子文件</button>
-		<button @click.stop="newFolder('root')">新建根文件</button>
-		<button @click.stop="dblChangeName">双击改名字</button>
-		<button @click.stop="moveToNew">移动位置</button>
+	<div class="pluginsContent" >
+		<input type="text" class="dropOne" :value="dropShowField.dropOne" @click.stop="showDropDown($event,optBorderRadius)" spellcheck="false">
+		<input type="text" class="dropMulti" :value="dropShowField.dropMulti" @click.stop="showDropDown($event,optCity)" spellcheck="false">
+		<dropDownComponent :optObj="currentDropOpt" @chooseItem="getDropData"></dropDownComponent>
+		<div class="treeChoosed">{{treeChoosed.name}}</div>
 		<div class="treeBlock">
 			<Item
 				:sourceData="treeData"
 				:treeT="treeSettingData"
-				v-if="isTreeShow"
 				ref="folderTree"
-				:isAdd="addFolder"
-
-				@changeNewName="getAddData"
 				@chooseTreeItem="getTreeData"
-				@changeDbNewName="getDblChangeData"
-				@getDefaultData="getDefaultData"
-				@getDragData="getDragData"
+				@changeDbNewName="getChangeData"
 				>
 			</Item>
 		</div>
 	</div>
 </template>
 <script>
-	export default{
-		name:'dropPlugin',
+	export default {
+		name: 'dropPlugin',
 		data(){
 			return {
-				addFolder:false,
 				treeData:[
 					{name:'语文',id:'1',pid:'0'},
 					{name:'数学',id:'2',pid:'3'},
@@ -64,157 +48,143 @@
                     'addDefField': '新建文件夹',
                     'defaultExpand': 'first'//默认选中“none”有bug
 				},
-				isTreeShow:true,
-
-				dropResult:{},
-				clickDrop:{
-					name:'borderRadius',
-					isShow:false,//初始化 是否显示下拉框
-					dropItems:[
-						{type:'0',text:'0px'},
-						{type:'10px',text:'10px'},
-						{type:'20px',text:'20px'},
-						{type:'30px',text:'30px'},
-						{type:'40px',text:'40px'},
-						{type:'50px',text:'50px'},
-					],
-					showField:'text',
-					realField:'type',
-					defaultItem:'',//选中项
-					isSearch:true,//是否要搜索功能
-				},
-				multiDrop:{
-					name:'multi',
-					isShow:false,//初始化 是否显示下拉框
-					dropItems:[
-						{type:'上海',text:'上海'},
-						{type:'北京',text:'北京'},
-						{type:'河北',text:'河北'},
-						{type:'河南',text:'河南'},
-						{type:'南阳',text:'南阳'},
-						{type:'洛阳',text:'洛阳'},
-					],
-					showField:'text',
-					realField:'type',
-					defaultItem:[],//选中项
-					isSearch:true,//是否要搜索功能
+				optBorderRadius: {
+                    name: 'borderRadius',
+                    dropItems: [{
+                        type: '0',
+                        text: '0px'
+                    }, {
+                        type: '10px',
+                        text: '10px'
+                    }, {
+                        type: '20px',
+                        text: '20px'
+                    }, {
+                        type: '30px',
+                        text: '30px'
+                    }, {
+                        type: '40px',
+                        text: '40px'
+                    }, {
+                        type: '50px',
+                        text: '50px'
+                    }],
+                    isShow: false,
+                    showField: 'text',
+                    realField: 'type',
+                    dropDownStyle: {
+                        zIndex:5
+                    }
+                },
+				optCity: {
+                    name: 'city',
+                    dropItems: [{
+                        type: '南阳',
+                        text: '南阳'
+                    }, {
+                        type: '洛阳',
+                        text: '洛阳'
+                    }, {
+                        type: '信阳',
+                        text: '信阳'
+                    }, {
+                        type: '商丘',
+                        text: '商丘'
+                    }, {
+                        type: '驻马店',
+                        text: '驻马店'
+                    }, {
+                        type: '郑州',
+                        text: '郑州'
+                    }],
+					isShow: false,
 					isMultiple:true,
+					isSearch:true,
 					multiLength:3,
-				},
-				curDrop:{},
+                    showField: 'text',
+                    realField: 'type',
+                    dropDownStyle: {
+                        zIndex:5
+                    }
+                },
+				currentDropOpt:{},
+				borderRadius:{},
+				cities:[],
+				treeChoosed:{}
 			}
 		},
 		mounted(){
-			let _this=this;
-			window.onclick=function(){
-				if(_this.dropDownOpt.isShow){
-					_this.dropDownOpt.isShow=false;
-				}
-			}
-		},
-		watch:{
 		},
 		computed:{
-			dropDownOpt(){
+			dropShowField(){
 				let _obj={};
-				if(this.curDrop.name==='borderRadius'){
-					_obj=this.clickDrop;
-				}else if(this.curDrop.name==='multi'){
-					_obj=this.multiDrop;
+				if (this.borderRadius.text) {
+					_obj.dropOne=this.borderRadius.text;
+				}
+				if (this.cities.length>0) {
+					for (let i=0;i<this.cities.length;i++) {
+						if (!_obj.dropMulti){
+							_obj.dropMulti='';
+						}
+						_obj.dropMulti=_obj.dropMulti+','+this.cities[i].text;
+					}
+					_obj.dropMulti=_obj.dropMulti.substr(1,_obj.dropMulti.length);
 				}
 				return _obj;
-			},
+			}
 		},
 		methods:{
-			newFolder(data){
-				if(data && data==='root'){
-					this.addFolder='root';
-				}else if(data){
-					this.addFolder=true;
+			showDropDown(e,opt){
+				if(this.currentDropOpt.isShow){
+					this.currentDropOpt.isShow=false;
+					return;
+				}
+				this.currentDropOpt = {};
+				this.currentDropOpt = {...opt};
+				if (this.currentDropOpt.name==='borderRadius') {
+					this.currentDropOpt.defaultItem=this.borderRadius.type;
+				} else if (this.currentDropOpt.name==='city'){
+					let arr=[];
+					for (let i=0;i<this.cities.length;i++) {
+						arr.push(this.cities[i].type);
+					}
+					this.currentDropOpt.defaultItem=arr;
+				}
+				this.currentDropOpt.el=e.target;
+				this.currentDropOpt.isShow=true;
+			},
+			getDropData(msg){
+				console.log(msg);
+				if(!this.currentDropOpt.isMultiple){
+					this.currentDropOpt.isShow=false;
+				}
+				if (this.currentDropOpt.name==='borderRadius') {
+					this.borderRadius=msg;
+				} else if (this.currentDropOpt.name==='city'){
+					this.cities=msg;
 				}
 			},
-			//单击选中项
 			getTreeData(msg){
-				console.log(msg);
+				this.treeChoosed=msg;
 			},
-			//新建文件夹信息
-			getAddData(msg){
-				console.log(msg);
-				this.addFolder=false;
-			},
-			getDblChangeData(msg){
-				console.log(msg);
-			},
-			getDefaultData(){
-
-			},
-			getDragData(msg){
-				console.log(msg);
-			},
-			toggleDrop(dropOpt,e){
-				this.curDrop=dropOpt;
-				dropOpt.isShow=!dropOpt.isShow;
-				dropOpt.el=e.target;
-				if(dropOpt.isMultiple){
-					if(this.dropResult[dropOpt.name] && this.dropResult[dropOpt.name].length>0){
-						dropOpt.defaultItem=[];
-						dropOpt.defaultItem=this.dropResult[dropOpt.name];
-					}
-				}else{
-					if(this.dropResult[dropOpt.name]){
-						dropOpt.defaultItem=this.dropResult[dropOpt.name][this.dropDownOpt.realField];
+			// newChangeName,oldModel
+			getChangeData(msg){
+				// console.log(msg);
+				for(let i=0;i< this.treeData.length;i++){
+					if (this.treeData[i].id===msg.oldModel.id){
+						let obj={...this.treeData[i]};
+						obj.name=msg.newChangeName;
+						this.treeData.splice(i,1,obj);
 					}
 				}
 			},
-			getDropItems(msg){
-				console.log(msg);
-				if(this.curDrop.name==='borderRadius'){
-					this.dropResult['borderRadius']=msg;
-					this.dropDownOpt.isShow=false;
-				}else if(this.curDrop.name==='multi'){
-					this.dropResult['multi']=[];
-					for(let item of msg){
-						this.dropResult['multi'].push(item[this.dropDownOpt.realField]);
-					}
-				}
-			}
 		}
 	}
 </script>
 <style lang="scss" scoped>
-	// @import '../assets/sass/reset.scss';
 	.treeBlock{
 		width:400px;
 		height:auto;
 		position:relative;
-		// background:#eee;
 	}
-	
-
- // /* */ (多行注释会被编译到css文件)与 // (单行注释不会被编译到css文件)
-	// .img{
-	// 	// background-image: url("../../../assets/img/loading.gif");
-	// 	// background-position: center;
-	// 	// background-size: contain;
-	// 	// background-repeat:no-repeat;
-		
-	// 	// 可以写成下面的属性嵌套
-	// 	background:{
-	// 		image:url("");
-	// 		position: center;
-	// 		size: contain;
-	// 		repeat:no-repeat;
-	// 	}
-	// }
-	// // 占位符选择器
-	// %inlineBlock{
-	// 	display:inline-block;
-	// 	vertical-align:top;
-	// }
-	// .dropOne{
-	// 	@extend %inlineBlock;
-	// 	color:red;
-	// }
-	// $width:120px;
-
 </style>

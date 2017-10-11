@@ -1,0 +1,66 @@
+//（loading）的样式
+.loadingBox{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(200,200,200,0.1);
+}
+.loadingBlock{
+	width: 30%;
+	height: 30%;
+	margin:auto;
+	max-height: 40px;
+	max-width: 40px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right:0;
+	bottom:0;
+
+	background-image: url("../../img/loading.gif");
+	background-position: center;
+	background-size: contain;
+	background-repeat:no-repeat;
+}
+
+//加载条（loadingLinear）的样式
+.loadingBar{
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height: 3px;
+	background: #efebeb;
+	z-index:20;
+}
+.loadingBarInner{
+	width:0;
+	height:100%;
+	background: #87b7e4;
+	position:absolute;
+	left:0;
+	top:0;
+}
+.barInnerStart{
+	width:70%;
+	animation:mymove 5s infinite linear;
+}
+@keyframes  mymove{
+	0% {
+		left:0;
+	}
+	100% {
+		left:99%;
+	}
+}
+.barInnerFinish{
+	width:100%;
+	transition: width .3s linear;
+}
+.barInnerError{
+	width:100%;
+	background: #f37272;
+	transition: width .3s linear;
+}

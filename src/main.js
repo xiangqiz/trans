@@ -7,11 +7,9 @@ import axios from 'axios'
 import fontCss from './assets/font/design-font/iconfont.css'
 import store from './store'
 
-import dropdown from './plugins/dropdown/dropInstall.js'
-import tree from './plugins/tree/itemInstall.js'
+import pluginsInstall from './assets/common';
 Vue.prototype.$http = axios
-Vue.use(dropdown)
-Vue.use(tree)
+Vue.use(pluginsInstall)
 
 Vue.config.debug=true;//开启错误提示
 new Vue({
@@ -19,6 +17,6 @@ new Vue({
 	store,
 	el:'#appIndex',
 	template:'<app/>',
-	components:{App},
-	// render:h=>h(App)
+	// components:{App},
+	render:h=>h(App)
 })
