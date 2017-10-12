@@ -4,6 +4,8 @@
 		<input type="text" class="dropMulti" :value="dropShowField.dropMulti" @click.stop="showDropDown($event,optCity)" spellcheck="false">
 		<dropDownComponent :optObj="currentDropOpt" @chooseItem="getDropData"></dropDownComponent>
 		<div class="treeChoosed">{{treeChoosed.name}}</div>
+		<button>新建子文件</button>
+		<button>新建根文件</button>
 		<div class="treeBlock">
 			<Item
 				:sourceData="treeData"
@@ -11,6 +13,7 @@
 				ref="folderTree"
 				@chooseTreeItem="getTreeData"
 				@changeDbNewName="getChangeData"
+				@changeNewName="getAddData"
 				>
 			</Item>
 		</div>
@@ -45,9 +48,10 @@
                     'defaultItem': true,
                     'isDbClick': true,
                     'isDrag': true,
-                    'addDefField': '新建文件夹',
+                    'addDefField':'新建文件夹',//默认的文件夹名字
                     'defaultExpand': 'first'//默认选中“none”有bug
 				},
+				isAdd:false,//添加文件夹
 				optBorderRadius: {
                     name: 'borderRadius',
                     dropItems: [{
@@ -134,6 +138,9 @@
 			}
 		},
 		methods:{
+			getAddData(msg){
+
+			},
 			showDropDown(e,opt){
 				if(this.currentDropOpt.isShow){
 					this.currentDropOpt.isShow=false;
