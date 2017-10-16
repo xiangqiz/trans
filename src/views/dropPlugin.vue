@@ -1,21 +1,35 @@
 <template>
 	<div class="pluginsContent" >
-		<input type="text" class="dropOne" :value="dropShowField.dropOne" @click.stop="showDropDown($event,optBorderRadius)" spellcheck="false">
-		<input type="text" class="dropMulti" :value="dropShowField.dropMulti" @click.stop="showDropDown($event,optCity)" spellcheck="false">
+		<div class="dropBlock">
+			<span class="dropText">下拉框展示</span>
+			<p class="dropText">单选：</p>
+			<input type="text" class="dropOne" placeholder="请选择"
+			:value="dropShowField.dropOne" 
+			@click.stop="showDropDown($event,optBorderRadius)" 
+			spellcheck="false">
+			<p class="dropText">多选（带搜索功能）：</p>
+			<input type="text" class="dropMulti" placeholder="请选择"
+			:value="dropShowField.dropMulti" 
+			@click.stop="showDropDown($event,optCity)" 
+			spellcheck="false">
+		</div>
 		<dropDownComponent :optObj="currentDropOpt" @chooseItem="getDropData"></dropDownComponent>
-		<div class="treeChoosed">{{treeChoosed.name}}</div>
-		<button>新建子文件</button>
-		<button>新建根文件</button>
 		<div class="treeBlock">
-			<Item
-				:sourceData="treeData"
-				:treeT="treeSettingData"
-				ref="folderTree"
-				@chooseTreeItem="getTreeData"
-				@changeDbNewName="getChangeData"
-				@changeNewName="getAddData"
-				>
-			</Item>
+			<button @click="newFolder(true)">新建子文件</button>
+			<button @click="newFolder('root')">新建根文件</button>
+			<div class="treeContent">
+				<Item
+					:sourceData="treeData"
+					:treeT="treeSettingData"
+					:isAdd="isAdd"
+					ref="folderTree"
+					@chooseTreeItem="getTreeData"
+					@changeDbNewName="getChangeData"
+					@changeNewName="getAddData"
+					@getDragData="getDragData"
+					>
+				</Item>
+			</div>
 		</div>
 	</div>
 </template>
@@ -45,7 +59,8 @@
                     'name': 'name',
                     'pId': 'pid',
                     // 'rootId': 'model_type_rootid',
-                    'defaultItem': true,
+                    // 'defaultItem': true,
+                    'defaultItem': '12',
                     'isDbClick': true,
                     'isDrag': true,
                     'addDefField':'新建文件夹',//默认的文件夹名字
@@ -138,8 +153,38 @@
 			}
 		},
 		methods:{
+			getDragData(msg){
+				console.log(msg);
+				for(let i=0;i< this.treeData.length;i++){
+					if (this.treeData[i].id===msg.dragData.id){
+						let obj={...this.treeData[i]};
+						if(typeof msg.parentData==='string' && msg.parentData==='root'){
+							obj.pid='0';
+						}else{
+							obj.pid=msg.parentData.id;
+						}
+						this.treeData.splice(i,1,obj);
+					}
+				}
+			},
+			newFolder(type){
+				this.isAdd=type;
+			},
 			getAddData(msg){
-
+				console.log(msg);
+				if (this.isAdd===true) {
+					this.creatAndAdd(msg.addValue,msg.parent.id);
+				}else if (this.isAdd==='root'){
+					this.creatAndAdd(msg.addValue,'0');
+				}
+				this.isAdd=false;
+			},
+			creatAndAdd(name,pid){
+				let _obj={};
+				_obj.name=name;
+				_obj.pid=pid;
+				_obj.id=String(Math.random());
+				this.treeData.push(_obj);
 			},
 			showDropDown(e,opt){
 				if(this.currentDropOpt.isShow){
@@ -176,7 +221,7 @@
 			},
 			// newChangeName,oldModel
 			getChangeData(msg){
-				// console.log(msg);
+				console.log(msg);
 				for(let i=0;i< this.treeData.length;i++){
 					if (this.treeData[i].id===msg.oldModel.id){
 						let obj={...this.treeData[i]};
@@ -189,9 +234,28 @@
 	}
 </script>
 <style lang="scss" scoped>
-	.treeBlock{
-		width:400px;
-		height:auto;
-		position:relative;
+	.pluginsContent{
+		width:100%;
+		height:100%;
+		.dropBlock{
+			display:inline-block;
+			vertical-align: top;
+			width:300px;
+			height:100%;
+			input{
+				margin: 10px 0;
+			}
+		}
+		.treeBlock{
+			display:inline-block;
+			vertical-align: top;
+			width:300px;
+			height:auto;
+			position:relative;
+			.treeContent{
+				width:100%;
+				position:relative;
+			}
+		}
 	}
 </style>
