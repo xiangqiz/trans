@@ -1,4 +1,5 @@
 let http = require('http');
+import blogDB from './db.js'
 http.createServer((request,response)=>{
     response.writeHead(200,{'Content_Type': 'text/plain'});
     response.end('hello world,zhanghuahua');

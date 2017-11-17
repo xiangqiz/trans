@@ -57,10 +57,9 @@ const removeData = (db, callback) => {
 mongoClient.connect(DB_CONN_STR,(err, db)=>{
     if (err) {
         console.log('数据库连接fail');
+        return;
     }
-    if (db) {
-        console.log('数据库连接success');
-    }
+    console.log('数据库连接success');
     insertData(db, (res) => {
         console.log('insert:', res);
     });
