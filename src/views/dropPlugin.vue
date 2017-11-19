@@ -15,8 +15,10 @@
 		</div>
 		<dropDownComponent :optObj="currentDropOpt" @chooseItem="getDropData"></dropDownComponent>
 		<div class="treeBlock">
-			<button @click="newFolder(true)">新建子文件</button>
-			<button @click="newFolder('root')">新建根文件</button>
+			<div class="btnArea">
+				<span @click="newFolder(true)">新建子文件</span>
+				<span @click="newFolder('root')">新建根文件</span>
+			</div>
 			<div class="treeContent">
 				<Item
 					:sourceData="treeData"
@@ -235,25 +237,50 @@
 </script>
 <style lang="scss" scoped>
 	.pluginsContent{
-		width:100%;
-		height:100%;
+		width: 700px;
+		height: 350px;
+		// background: #eee;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -175px -350px;
+		font-size:0;
 		.dropBlock{
 			display:inline-block;
 			vertical-align: top;
 			width:300px;
 			height:100%;
+			font-size:14px;
+			text-align: center;
 			input{
 				margin: 10px 0;
+				border-radius: 3px;
+				// background: #eee;
+				height:20px;
+				outline:none;
+				border:1px solid #d2d2d2;
 			}
 		}
 		.treeBlock{
 			display:inline-block;
 			vertical-align: top;
-			width:300px;
+			width:calc( 100% - 300px);
 			height:auto;
 			position:relative;
-			.treeContent{
+			font-size:15px;
+			.btnArea{
 				width:100%;
+				height: 20px;
+				text-align: center;
+				span{
+					width:auto;
+					height:100%;
+					margin-right: 15px;
+				}
+			}
+			.treeContent{
+				width:80%;
+				margin: 0 auto;
 				position:relative;
 			}
 		}
